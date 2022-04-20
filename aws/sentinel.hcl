@@ -14,10 +14,10 @@ module "aws-functions" {
   source = "./aws-functions/aws-functions.sentinel"
 }
   
-policy "bridgecrew" {
+policy "prismacloud" {
   source            = "./prismacloud.sentinel"
   enforcement_level = "advisory"
-}  
+}
 
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
