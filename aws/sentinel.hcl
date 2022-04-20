@@ -16,7 +16,7 @@ module "aws-functions" {
   
 policy "prismacloud" {
   source            = "./prismacloud.sentinel"
-  enforcement_level = "advisory"
+  enforcement_level = "soft-mandatory"
 }
 
 policy "check-ec2-environment-tag" {
