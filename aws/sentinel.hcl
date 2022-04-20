@@ -13,6 +13,11 @@ module "tfconfig-functions" {
 module "aws-functions" {
   source = "./aws-functions/aws-functions.sentinel"
 }
+  
+policy "bridgecrew" {
+  source            = "./bridgecrew.sentinel"
+  enforcement_level = "advisory"
+}  
 
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
