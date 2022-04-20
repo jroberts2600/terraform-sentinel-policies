@@ -15,7 +15,7 @@ module "aws-functions" {
 }
   
 policy "bridgecrew" {
-  source            = "./bridgecrew.sentinel"
+  source            = "./prismacloud.sentinel"
   enforcement_level = "advisory"
 }  
 
