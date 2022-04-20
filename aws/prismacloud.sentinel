@@ -1,9 +1,3 @@
-policy "prismacloud" {
-        source            = "./bridgecrew"
-        enforcement_level = "advisory"
-}
-
-
 import "http"
 import "json"
 import "tfrun"
