@@ -1,5 +1,6 @@
 import "http"
 import "json"
+import "tfrun"
 
 param PRISMA_ACCESS_KEY
 param PRISMA_SECRET_KEY
