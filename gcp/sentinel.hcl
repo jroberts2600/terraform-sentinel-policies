@@ -13,6 +13,11 @@ module "tfconfig-functions" {
 module "gcp-functions" {
     source = "./gcp-functions/gcp-functions.sentinel"
 }
+    
+policy "prismacloud" {
+    source            = "./prismacloud.sentinel"
+    enforcement_level = "advisory"
+}
 
 policy "enforce-mandatory-labels" {
     source = "./enforce-mandatory-labels.sentinel"
