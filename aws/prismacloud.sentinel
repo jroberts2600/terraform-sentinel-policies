@@ -1,8 +1,8 @@
 import "http"
 import "json"
 
-param username
-param password
+param prisma_access_key
+param prisma_secret_key
 
 loginReq = http.request("https://api0.prismacloud.io/login").with_body(json.marshal({"username": PRISMA_ACCESS_KEY, "password": PRISMA_SECRET_KEY})).with_header("Content-Type", "application/json")
 loginResp = json.unmarshal(http.post(loginReq).body)
