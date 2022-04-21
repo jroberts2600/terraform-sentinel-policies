@@ -1,6 +1,9 @@
 import "http"
 import "json"
 
+param PRISMA_ACCESS_KEY
+param PRISMA_SECRET_KEY
+
 loginReq = http.request("https://api0.prismacloud.io/login").with_body(json.marshal({"username": PRISMA_ACCESS_KEY, "password": PRISMA_SECRET_KEY})).with_header("Content-Type", "application/json")
 loginResp = json.unmarshal(http.post(loginReq).body)
 
@@ -18,5 +21,4 @@ if (length(resp.violations) > 0) {
 print("More details: " + resp.details_url)  
 main = rule { length(resp.violations) < 1 }
 
-param PRISMA_ACCESS_KEY
-param PRISMA_SECRET_KEY
+
