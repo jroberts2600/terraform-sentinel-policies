@@ -8,7 +8,7 @@ param prisma_secret_key
 loginReq = http.request("https://api0.prismacloud.io/login").with_body(json.marshal({"username": prisma_access_key, "password": prisma_secret_key})).with_header("Content-Type", "application/json")
 loginResp = json.unmarshal(http.post(loginReq).body)
 
-req = http.request("https://api0.prismacloud.io/bridgecrew/api/v1/tfCloud/sentinel/sentinel/" + tfrun.workspace.id).with_header("Authorization", loginResp.token)
+req = http.request("https://api0.prismacloud.io/bridgecrew/api/v1/tfCloud/sentinel/" + tfrun.workspace.id).with_header("Authorization", loginResp.token)
 resp = json.unmarshal(http.get(req).body)
 if (length(resp.violations) > 0) {
     print("Violations:\n")
