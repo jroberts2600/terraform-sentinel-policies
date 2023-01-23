@@ -18,11 +18,6 @@ policy "prismacloud" {
   source            = "./prismacloud.sentinel"
   enforcement_level = "advisory"
 }
-  
-policy "prismacloud-ws-dy4" {
-  source            = "./prismacloud-ws-dy4.sentinel"
-  enforcement_level = "advisory"
-}
 
 policy "check-ec2-environment-tag" {
   source = "./check-ec2-environment-tag.sentinel"
